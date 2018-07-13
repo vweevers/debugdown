@@ -1,6 +1,6 @@
 {
   "name": "debugdown",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Log all operations made on an abstract-leveldown compliant store",
   "author": "Vincent Weevers",
   "license": "MIT",
