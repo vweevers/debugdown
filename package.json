@@ -1,0 +1,26 @@
+{
+  "name": "debugdown",
+  "version": "0.0.0",
+  "description": "Log all operations made on an abstract-leveldown store",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "keywords": [
+    "leveldown",
+    "level",
+    "abstract-leveldown",
+    "levelup"
+  ],
+  "author": "Vincent Weevers",
+  "license": "MIT",
+  "dependencies": {
+    "abstract-leveldown": "~5.0.0",
+    "debug": "~3.1.0",
+    "inherits": "~2.0.3"
+  },
+  "devDependencies": {
+    "memdown": "~3.0.0",
+    "rimraf": "~2.6.2",
+    "tape": "~4.9.1"
+  }
+}
