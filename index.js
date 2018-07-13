@@ -13,19 +13,19 @@ function DebugDown (db, scope) {
   AbstractLevelDOWN.call(this, '')
 
   this.db = db
-  this.debug = debug(scope || 'debugdown')
+  this.debug = wrap(debug(scope || 'debugdown'))
 }
 
 inherits(DebugDown, AbstractLevelDOWN)
 
 DebugDown.prototype._serializeKey = function (key) {
   this.debug('serializeKey', key)
-  return key
+  return this.db._serializeKey(key)
 }
 
 DebugDown.prototype._serializeValue = function (value) {
   this.debug('serializeValue', value)
-  return value
+  return this.db._serializeValue(value)
 }
 
 DebugDown.prototype._open = function (options, cb) {
@@ -118,4 +118,20 @@ Batch.prototype._write = function (options, cb) {
 
   this.debug('batch#write', options)
   this.batch.write(options, cb)
+}
+
+function wrap (debug) {
+  return function () {
+    var args = Array.prototype.slice.call(arguments)
+
+    for (var i = 1; i < args.length; i++) {
+      var arg = args[i]
+
+      if (arg != null && (Array.isArray(arg) || typeof arg !== 'object')) {
+        args[i] = JSON.stringify(arg)
+      }
+    }
+
+    debug.apply(null, args)
+  }
 }
