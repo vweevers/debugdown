@@ -4,7 +4,7 @@
 
 [![npm](https://img.shields.io/npm/v/debugdown.svg)](https://www.npmjs.com/package/debugdown)
 ![Node version](https://img.shields.io/node/v/debugdown.svg)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/vweevers/debugdown.svg)](https://greenkeeper.io/)
 
 ## Usage
 
